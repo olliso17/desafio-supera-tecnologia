@@ -62,7 +62,7 @@ class BottomPurchase extends StatelessWidget {
                           ),
                           BottomConfirm(
                             textBottom: TextGamer(
-                                color: Color(0xff90a955), text: 'Confirmar'),
+                                color: kColorTextGamerName, text: 'Confirmar'),
                             onPressed: () {
                               showDialog(
                                   context: context,
@@ -102,7 +102,7 @@ class BottomPurchase extends StatelessWidget {
                                                 });
                                           },
                                           textBottom: TextGamer(
-                                              color: Color(0xff90a955),
+                                              color: kColorTextGamerName,
                                               text: 'Confirmar'),
                                         ),
                                         BottomConfirm(
@@ -110,7 +110,7 @@ class BottomPurchase extends StatelessWidget {
                                             Navigator.pop(context);
                                           },
                                           textBottom: TextGamer(
-                                              color: Color(0xff90a955),
+                                              color: kColorTextGamerName,
                                               text: 'Cancelar'),
                                         ),
                                       ],
@@ -131,7 +131,7 @@ class BottomPurchase extends StatelessWidget {
                     ),
                   ));
         },
-        child: TextGamer(color: Color(0xff90a955), text: 'Confirmar'),
+        child: TextGamer(color: kColorTextGamerName, text: 'Confirmar'),
       ),
     );
   }
