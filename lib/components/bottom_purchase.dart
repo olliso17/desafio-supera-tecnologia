@@ -29,104 +29,110 @@ class BottomPurchase extends StatelessWidget {
         gradient: kLinearGradientBottom,
       ),
       child: FlatButton(
-          onPressed: () {
-            showModalBottomSheet(
-                context: context,
-                builder: (context) => Container(
-                      color: kBackgroundColorContainer,
-                      child: Container(
-                        padding: EdgeInsets.all(24.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20.0),
-                              topRight: Radius.circular(20.0)),
-                          gradient: kGradientCardList,
-                        ),
-                        child: Column(
-                          children: [
-                            TextGamer(
-                              text: textPurchase,
-                              color: kColorTextGamerScore,
-                            ),
-                            TextGamer(
-                              text: textPrice,
-                              color: kColorTextGamerScore,
-                            ),
-                            TextGamer(
-                              text: textShipping,
-                              color: kColorTextGamerScore,
-                            ),
-                            TextGamer(
-                              text: textAmount,
-                              color: kColorTextGamerName,
-                            ),
-                            BottomConfirm(
-                              textBottom: kTextBottomConfirm,
-                              onPressed: () {
-                                showDialog(
-                                    context: context,
-                                    builder: (context) {
-                                      return AlertDialog(
-                                        backgroundColor: kAlertColor,
-                                        title: TextGamer(
-                                          text: 'Olá!',
-                                          color: kColorTextGamerScore,
-                                        ),
-                                        content: TextGamer(
-                                          text:
-                                              'Tem certeza que deseja efetuar a compra?',
-                                          color: kColorTextGamerScore,
-                                        ),
-                                        actions: [
-                                          BottomConfirm(
-                                            onPressed: () {
-                                              showDialog(
-                                                  context: context,
-                                                  builder: (context) {
-                                                    return AlertDialog(
-                                                      backgroundColor:
-                                                          kAlertColor,
-                                                      title: TextGamer(
-                                                        text: 'Obrigada!',
-                                                        color:
-                                                            kColorTextGamerScore,
-                                                      ),
-                                                      content: TextGamer(
-                                                        text:
-                                                            'Sua compra foi realizada com sucesso!',
-                                                        color:
-                                                            kColorTextGamerScore,
-                                                      ),
-                                                    );
-                                                  });
-                                            },
-                                            textBottom: kTextBottomConfirm,
-                                          ),
-                                          BottomConfirm(
-                                            onPressed: () {
-                                              Navigator.pop(context);
-                                            },
-                                            textBottom: kTextBottomCancel,
-                                          ),
-                                        ],
-                                      );
-                                    });
-                              },
-                            ),
-                            SizedBox(
-                              height: height * 0.02,
-                            ),
-                            TextGamer(
-                              text:
-                                  'Obs.: Valor igual ou acima de R\$ 250,0 o frete é gratuito',
-                              color: kColorTextGamerScore,
-                            )
-                          ],
-                        ),
+        onPressed: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (context) => Container(
+                    color: kBackgroundColorContainer,
+                    child: Container(
+                      padding: EdgeInsets.all(24.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20.0),
+                            topRight: Radius.circular(20.0)),
+                        gradient: kGradientCardList,
                       ),
-                    ));
-          },
-          child: kTextBottomConfirm),
+                      child: Column(
+                        children: [
+                          TextGamer(
+                            text: textPurchase,
+                            color: kColorTextGamerScore,
+                          ),
+                          TextGamer(
+                            text: textPrice,
+                            color: kColorTextGamerScore,
+                          ),
+                          TextGamer(
+                            text: textShipping,
+                            color: kColorTextGamerScore,
+                          ),
+                          TextGamer(
+                            text: textAmount,
+                            color: kColorTextGamerName,
+                          ),
+                          BottomConfirm(
+                            textBottom: TextGamer(
+                                color: Color(0xff90a955), text: 'Confirmar'),
+                            onPressed: () {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      backgroundColor: kAlertColor,
+                                      title: TextGamer(
+                                        text: 'Olá!',
+                                        color: kColorTextGamerScore,
+                                      ),
+                                      content: TextGamer(
+                                        text:
+                                            'Tem certeza que deseja efetuar a compra?',
+                                        color: kColorTextGamerScore,
+                                      ),
+                                      actions: [
+                                        BottomConfirm(
+                                          onPressed: () {
+                                            showDialog(
+                                                context: context,
+                                                builder: (context) {
+                                                  return AlertDialog(
+                                                    backgroundColor:
+                                                        kAlertColor,
+                                                    title: TextGamer(
+                                                      text: 'Obrigada!',
+                                                      color:
+                                                          kColorTextGamerScore,
+                                                    ),
+                                                    content: TextGamer(
+                                                      text:
+                                                          'Sua compra foi realizada com sucesso!',
+                                                      color:
+                                                          kColorTextGamerScore,
+                                                    ),
+                                                  );
+                                                });
+                                          },
+                                          textBottom: TextGamer(
+                                              color: Color(0xff90a955),
+                                              text: 'Confirmar'),
+                                        ),
+                                        BottomConfirm(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          textBottom: TextGamer(
+                                              color: Color(0xff90a955),
+                                              text: 'Cancelar'),
+                                        ),
+                                      ],
+                                    );
+                                  });
+                            },
+                          ),
+                          SizedBox(
+                            height: height * 0.02,
+                          ),
+                          TextGamer(
+                            text:
+                                'Obs.: Valor igual ou acima de R\$ 250,0 o frete é gratuito',
+                            color: kColorTextGamerScore,
+                          )
+                        ],
+                      ),
+                    ),
+                  ));
+        },
+        child: TextGamer(color: Color(0xff90a955), text: 'Confirmar'),
+      ),
     );
   }
 }

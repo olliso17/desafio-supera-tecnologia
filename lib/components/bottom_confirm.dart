@@ -3,7 +3,7 @@ import 'package:games_app/components/constants.dart';
 
 class BottomConfirm extends StatelessWidget {
   final Function onPressed;
-  final Text textBottom;
+  final Widget textBottom;
   const BottomConfirm({
     this.textBottom,
     this.onPressed,

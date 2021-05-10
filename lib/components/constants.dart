@@ -1,15 +1,5 @@
 import 'package:flutter/material.dart';
 
-const Text kTextBottomConfirm = Text(
-  'Comprar',
-  style: TextStyle(
-      color: Color(0xff90a955), fontSize: 23.0, fontWeight: FontWeight.bold),
-);
-const Text kTextBottomCancel = Text(
-  'Cancelar',
-  style: TextStyle(
-      color: Color(0xff90a955), fontSize: 23.0, fontWeight: FontWeight.bold),
-);
 const Color kIconColor = Color(0xFF90a955);
 const Color kAppBarColor = Color(0xFF132a13);
 const LinearGradient kGradientCardList = LinearGradient(colors: [
